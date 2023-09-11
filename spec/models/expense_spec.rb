@@ -1,9 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-    let(:user) { User.create(name: 'Ali43', email: 'ali906@gmail.com', password: '123456') }
-    let(:expense) { Expense.new(name: 'Music', amount: 10.32, author: user) }
-  
+  let(:user) { User.create(name: 'Ali43', email: 'ali906@gmail.com', password: '123456') }
+  let(:expense) { Expense.new(name: 'Music', amount: 10.32, author: user) }
 
   it 'Group object must be valid' do
     expect(expense).to be_valid

@@ -10,5 +10,4 @@ class User < ApplicationRecord
 
   # Attributes and Validations
   validates :name, presence: true, length: { in: 3..25 }
-
 end
