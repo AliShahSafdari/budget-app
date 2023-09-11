@@ -70,3 +70,8 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
+# add device 
+gem 'devise'
+
+# add cancancan for authoriztion
+gem 'cancancan'
