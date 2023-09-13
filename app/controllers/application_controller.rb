@@ -5,4 +5,9 @@ class ApplicationController < ActionController::Base
       user.permit(:name, :email, :password, :password_confirmation)
     end
   end
+  protected
+
+  def after_sign_in_path_for(resource)
+    authenticated_root_path
+  end
 end
