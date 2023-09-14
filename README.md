@@ -94,12 +94,12 @@ To run tests, run the following commands:
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🚀 Deployment <a name="Deployment"></a>
-Deployment: [linkw]()
+Deployment: [linkw](https://budget-app-ax9d.onrender.com)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🎞️ Presentation Video <a name="video"></a>
-Video: [link]()
+Video: [link](https://www.loom.com/share/ccb3f7e333c5483d923a6171278c0f0d?sid=45a030cb-81a2-4727-b9d5-ddcd3e833d3c)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

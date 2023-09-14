@@ -4,8 +4,6 @@ class ExpensesController < ApplicationController
   # GET /expenses or /expenses.json
   def index
     @expenses = Group.find(@group.id).expenses.order(created_at: :desc)
-
-    # @expenses = Expense.all
   end
 
   # GET /expenses/1 or /expenses/1.json
@@ -13,9 +11,6 @@ class ExpensesController < ApplicationController
 
   # GET /expenses/new
   def new
-    # @group = Group.find(params[:group_id])
-    # @expense = @group.expenses.build
-
     @expense = Expense.new
   end
 
@@ -24,11 +19,6 @@ class ExpensesController < ApplicationController
 
   # POST /expenses or /expenses.json
   def create
-    # @group = Group.find(params[:group_id])
-    # @expense = @group.expenses.build(expense_params)
-    # @expense.author = current_user
-    # Rails.logger.info @expense.inspect
-
     @expense = Expense.new(expense_params)
     @expense.author = current_user
     Rails.logger.info @expense.inspect
