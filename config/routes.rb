@@ -12,9 +12,12 @@ Rails.application.routes.draw do
   unauthenticated do
     root "splash#index"
   end
-  resources :group_expenses
-  resources :expenses
-  resources :groups
+  resources :groups do
+    resources :expenses
+  end
+  # resources :group_expenses
+  # resources :expenses
+  # resources :groups
   # resources :users
 
 end

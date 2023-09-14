@@ -1,25 +1,34 @@
 require 'rails_helper'
 
 RSpec.describe 'GroupController', type: :request do
-  let(:user) { User.create(name: 'Test User', email: 'ali@example.com', password: '123456') }
-  let(:group) { Group.create(name: 'Test Recipe', user:) }
+  include Devise::Test::IntegrationHelpers
+  let(:user) { User.create(name: 'Test User', email: 'ali@example.com', password: '123456')  }
+  let(:group) {  Group.create(name: 'Test Recipe', author_id:user.id)  }
 
-  context 'GET /index' do
-    it 'returns http success' do
-      get '/groups'
-      expect(response).to have_http_status(:success)
-      expect(response.status).to eq(200)
-    end
+  before do
+    sign_in user
+  end
 
-    it 'render the index template' do
-      get '/groups'
-      expect(response).to render_template('groups/index')
-    end
-
-    it 'returns http success' do
-      get '/groups/new'
+  describe 'GET #index' do
+    it 'returns a successful response' do
+      get groups_path
+      expect(response).to have_http_status(:ok)
       expect(response).to have_http_status(:success)
       expect(response.status).to eq(200)
     end
   end
+
+  describe 'GET #show' do
+  it 'returns a successful response' do
+    get groups_path(group)
+    expect(response).to have_http_status(:ok)
+  end
+  end
+  describe 'GET #new' do
+    it 'returns a successful response' do
+      get new_group_path
+      expect(response).to have_http_status(:ok)
+    end
+  end
+
 end

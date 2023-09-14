@@ -1,14 +1,32 @@
-<p style="color: green"><%= notice %></p>
+<div> 
+  <nav class="navbar navbar-light bg-primary justify-content-between text-light">
+    <%= link_to( raw("<i class='fas fa-arrow-left'></i>"),groups_path, class:'btn btn-primary ' )%>
+      
+    <h2>TRANSACTIONS</h2>
+    <%= button_to destroy_user_session_path, method: :delete, class: "btn btn-primary me-2" do %>
+      <i class="fa fa-user"></i> Logout
+    <% end %>
+  </nav>
 
-<h1>Expenses</h1>
+  <div class="border-end border-start me-1 ms-1 pt-3" style="height: 80vh;">
+    <div class="row">
+    <div class="col-4 text-center"> 
+      <img src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+      alt="test" class="img-thumbnail image ps-1">
+    </div>
+    <div class="col-4 text-center"> 
+      <h3><%= @group.name %></h3>
+    </div>
+    <div class="col-4 text-center"> 
+      <p class="pe-1">Total amount:  $<%= @group.total_value %></p>
+    </div>
+  </div>
 
-<div id="expenses">
-  <% @expenses.each do |expense| %>
-    <%= render expense %>
-    <p>
-      <%= link_to "Show this expense", expense %>
-    </p>
-  <% end %>
+    <p style="color: green"><%= notice %></p>
+    <% @expenses.each do |expense| %>
+        <%= render expense %>
+    <% end %>
+    <div class="d-grid mb-1 pe-1 ps-1">
+       <%= link_to "New expense", new_group_expense_path(@group),class: "btn btn-success m-3" %>
+      </div>
 </div>
-
-<%= link_to "New expense", new_expense_path %>

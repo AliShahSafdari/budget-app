@@ -10,6 +10,7 @@
     <p style="color: green"><%= notice %></p>  
     <% @groups.each do |group| %>
       <div class="card m-2">
+      <%= link_to group_expenses_path(group), class: 'cont' do %>
         <div class="row">
           <div class="col-4 text-center"> 
             <img src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
@@ -19,9 +20,10 @@
             <h3><%= group.name %></h3>
           </div>
           <div class="col-4 text-center"> 
-            <p class="pe-1">Total amount</p>
+            <p class="pe-1">Total amount:  $<%= group.total_value %></p>
           </div>
         </div>
+        <% end %>
       </div>
     <% end %>
   
