@@ -1,21 +1,24 @@
-.hight{
+.hight {
     height: 100vh;
-    background-color:#f0f0f0;
-}
-
-.title { 
+    background-color: #f0f0f0;
+  }
+  
+  .title {
     margin-top: 35vh;
     display: flex;
     flex-flow: column;
-}
-.white-color{
- color: red;
-}
-.image{
+  }
+  
+  .white-color {
+    color: red;
+  }
+  
+  .image {
     width: 150px;
     height: 150px;
-}
-.absolut{
+  }
+  
+  .absolut {
     position: absolute;
-    
-}
+  }
+  
