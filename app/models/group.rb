@@ -7,7 +7,6 @@ class Group < ApplicationRecord
   # Attributes and Validations
   validates :name, presence: true
   validates :icon, presence: true
-  
 
   def self.display_groups
     order(created_at: :desc)

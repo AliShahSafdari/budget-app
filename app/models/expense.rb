@@ -4,7 +4,6 @@ class Expense < ApplicationRecord
   has_many :group_expenses, dependent: :destroy
   has_many :groups, through: :group_expenses
 
-
   # Attributes and Validations
   validates :name, presence: true
   validates :amount, presence: true

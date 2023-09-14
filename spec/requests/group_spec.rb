@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe 'GroupController', type: :request do
   include Devise::Test::IntegrationHelpers
-  let(:user) { User.create(name: 'Test User', email: 'ali@example.com', password: '123456')  }
-  let(:group) {  Group.create(name: 'Test Recipe', author_id:user.id)  }
+  let(:user) { User.create(name: 'Test User', email: 'ali@example.com', password: '123456') }
+  let(:group) { Group.create(name: 'Test Recipe', author_id: user.id) }
 
   before do
     sign_in user
@@ -19,10 +19,10 @@ RSpec.describe 'GroupController', type: :request do
   end
 
   describe 'GET #show' do
-  it 'returns a successful response' do
-    get groups_path(group)
-    expect(response).to have_http_status(:ok)
-  end
+    it 'returns a successful response' do
+      get groups_path(group)
+      expect(response).to have_http_status(:ok)
+    end
   end
   describe 'GET #new' do
     it 'returns a successful response' do
@@ -30,5 +30,4 @@ RSpec.describe 'GroupController', type: :request do
       expect(response).to have_http_status(:ok)
     end
   end
-
 end

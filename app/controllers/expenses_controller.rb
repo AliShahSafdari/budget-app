@@ -1,4 +1,3 @@
-
 class ExpensesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_group
@@ -30,7 +29,6 @@ class ExpensesController < ApplicationController
     # @expense.author = current_user
     # Rails.logger.info @expense.inspect
 
-
     @expense = Expense.new(expense_params)
     @expense.author = current_user
     Rails.logger.info @expense.inspect
@@ -48,7 +46,9 @@ class ExpensesController < ApplicationController
       end
     end
   end
+
   private
+
   def set_group
     @group = current_user.groups.find(params[:group_id])
   end
