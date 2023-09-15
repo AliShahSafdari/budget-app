@@ -36,9 +36,6 @@ The **Budget App**  is an application for keeping track of our expenses in diffe
 - RUBY
 - Rails
 - Postgresql
-- HTML
-- CSS
-- Javascript
 
 ### Key Features <a name="key-features"></a>
 

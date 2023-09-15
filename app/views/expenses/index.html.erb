@@ -25,7 +25,8 @@
     <% @expenses.each do |expense| %>
         <%= render expense %>
     <% end %>
-    <div class="d-grid mb-1 pe-1 ps-1">
-       <%= link_to "New expense", new_group_expense_path(@group),class: "btn btn-success m-3" %>
+    <div class="fixed-bottom d-flex justify-content-center align-items-center" style="background: #60B524;height:50px; ">
+
+       <%= link_to "New expense", new_group_expense_path(@group), class:"btn text-light fs-6", style:"border:1px solid white; width:95%;" %>
       </div>
 </div>
