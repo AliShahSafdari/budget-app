@@ -1,0 +1,47 @@
+<ul class="nav d-flex justify-content-between bg-primary mb-1" style="width:100%">
+<li class="nav-item">
+  <%= link_to(
+                raw("<i class='fas fa-arrow-left'></i>"),
+                root_path,
+                class: "nav-link text-light border-0"
+              )%>
+</li>
+<li class="nav-item">
+  <a class="nav-link text-light" href="#">REGISTER</a>
+</li>
+<li class="nav-item">
+   <button type="button" id="signup-button" class="btn btn-primary">Next</button>
+</li>
+</ul>
+<div >
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), id: "group_form") do |f| %>
+<%= render "devise/shared/error_messages", resource: resource %>
+  <div class="d-grid mb-2 pe-1 ps-1">
+  <%= f.text_field :name , class:"form-control", placeholder: "Full name"%>
+</div>
+
+<div class="d-grid mb-3 pe-1 ps-1">
+<%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", placeholder: "Email"%>
+</div>
+
+<div class="d-grid pe-1 mb-0 ps-1">
+  <% if @minimum_password_length %>
+  <em>(<%= @minimum_password_length %> characters minimum)</em>
+  <% end %><br />
+  <%= f.password_field :password, autocomplete: "new-password", class:"form-control", placeholder:'password' %>
+</div>
+
+<div class="d-grid mb-1  pt-0 pe-1 ps-1">
+  <%= f.password_field :password_confirmation, autocomplete: "new-password" , class:"form-control", placeholder:'password_confirmation' %>
+</div>
+<% end %>
+</div>
+</div>
+
+<script>
+let signupbutton = document.getElementById("signup-button");
+let form = document.querySelector("form");
+signupbutton.addEventListener("click", function(){
+form.submit();
+})
+</script>

@@ -1,0 +1,9 @@
+<div class="card" style=" width:90%; margin:0 auto">
+  <div class="row">
+    <div class="col-6 text-center"> Name:<%= expense.name %> </div>
+    <div class="col-6 text-center"> Amount:<%= expense.amount %> </div>
+  </div>
+  <div class="text-center">
+    Create at:<%= "#{expense.created_at.day} #{expense.created_at.strftime("%b")} #{expense.created_at.year}"%>
+  </div>
+</div>

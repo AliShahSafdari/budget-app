@@ -1,0 +1,40 @@
+<div> 
+  <nav class="navbar navbar-light bg-primary justify-content-between text-light">
+    <%= link_to( raw("<i class='fas fa-arrow-left'></i>"),group_expenses_path, class:'btn btn-primary ' )%>
+      
+    <h2>NEW TRANSACTION</h2>
+    <%= button_to destroy_user_session_path, method: :delete, class: "btn btn-primary me-2" do %>
+      <i class="fa fa-user"></i> Logout
+    <% end %>
+  </nav>
+  <div class="border-end border-start me-1 ms-1 pt-3" style="height: 100vh;">
+    <%= form_with model: [@group, @expense], class:"add-form" do |form| %>
+        <div class="d-grid mb-1 pe-1 ps-1">
+          <%= form.text_field :name, class: "i-control", placeholder: 'Name' %>
+          <% if @expense.errors.has_key?(:name) %>
+            <p class="error-message"><%= @expense.errors[:name].first %></p>
+          <% end %>
+        </div>
+  
+      <div class="d-grid mb-1 pe-1 ps-1">
+        <%= form.number_field :amount, class: "i-control", placeholder: 'Amount' %>
+        <% if @expense.errors.has_key?(:amount) %>
+          <p class="error-message"><%= @expense.errors[:amount].first %></p>
+        <% end %>
+      </div>
+  
+      <div class="d-grid mb-1 pe-1 ps-1">
+        <%= form.collection_select :group_id, current_user.groups, :id, :name, {}, class: "form-select i-control" %>
+        <% if @expense.errors.has_key?(:group_id) %>
+          <p class="error-message"><%= @expense.errors[:group_id].first %></p>
+        <% end %>
+      </div>
+    
+  
+      <div class="d-grid mb-1 pe-1 ps-1">
+        <%= form.submit "Save" ,class: "btn btn-light border" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+

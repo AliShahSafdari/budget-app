@@ -1,0 +1,32 @@
+<div> 
+  <nav class="navbar navbar-light bg-primary justify-content-between text-light">
+    <%= link_to( raw("<i class='fas fa-arrow-left'></i>"),groups_path, class:'btn btn-primary ' )%>
+      
+    <h2>TRANSACTIONS</h2>
+    <%= button_to destroy_user_session_path, method: :delete, class: "btn btn-primary me-2" do %>
+      <i class="fa fa-user"></i> Logout
+    <% end %>
+  </nav>
+
+  <div class="border-end border-start me-1 ms-1 pt-3" style="height: 80vh;">
+    <div class="row">
+    <div class="col-4 text-center"> 
+      <img src="<%= @group.icon%>"alt="picture alt" class="img-thumbnail image ps-1">
+    </div>
+    <div class="col-4 text-center"> 
+      <h3><%= @group.name %></h3>
+    </div>
+    <div class="col-4 text-center"> 
+      <p class="pe-1">Total amount:  $<%= @group.total_value %></p>
+    </div>
+  </div>
+
+    <p style="color: green"><%= notice %></p>
+    <% @expenses.each do |expense| %>
+        <%= render expense %>
+    <% end %>
+    <div class="fixed-bottom d-flex justify-content-center align-items-center" style="background: #60B524;height:50px; ">
+
+       <%= link_to "New expense", new_group_expense_path(@group), class:"btn text-light fs-6", style:"border:1px solid white; width:95%;" %>
+      </div>
+</div>

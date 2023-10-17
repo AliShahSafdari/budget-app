@@ -1,0 +1,34 @@
+<div> 
+  <nav class="navbar navbar-light bg-primary justify-content-between text-light">
+    <button class="btn btn-primary" > <i class="fa-solid fa-bars"></i></button>
+    <h2> GROUP</h2>
+    <%= button_to destroy_user_session_path, method: :delete, class: "btn btn-primary me-2" do %>
+      <i class="fa fa-user"></i> Logout
+    <% end %>
+  </nav>
+  <div id="groups" class ="border-end border-start me-1 ms-1 pt-0" style="height: 90vh;">
+    <p style="color: green"><%= notice %></p>  
+    <% @groups.each do |group| %>
+      <div class="card m-2">
+      <%= link_to group_expenses_path(group), class: 'cont' do %>
+        <div class="row">
+          <div class="col-4 text-center"> 
+            <img src="<%= group.icon%>"alt="picture alt" class="img-thumbnail image ps-1">
+          </div>
+          <div class="col-4 text-center"> 
+            <h3><%= group.name %></h3>
+          </div>
+          <div class="col-4 text-center"> 
+            <p class="pe-1">Total amount:  $<%= group.total_value %></p>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    <% end %>
+  
+    <div class="fixed-bottom d-flex justify-content-center align-items-center" style="background: #60B524;height:50px; ">
+
+      <%= link_to "New group", new_group_path, class:"btn text-light fs-6", style:"border:1px solid white; width:95%;" %>
+    </div>
+  </div>
+</div>
